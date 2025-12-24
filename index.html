@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>康威生命游戏 - Conway's Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 康威生命游戏</h1>
+            <p class="subtitle">Conway's Game of Life</p>
+        </header>
+
+        <div class="main-content">
+            <div class="canvas-container">
+                <canvas id="gameCanvas"></canvas>
+            </div>
+
+            <div class="controls">
+                <div class="control-section">
+                    <h3>🎯 控制面板</h3>
+                    <div class="button-group">
+                        <button id="startBtn" class="btn btn-primary">▶ 开始</button>
+                        <button id="pauseBtn" class="btn btn-secondary" disabled>⏸ 暂停</button>
+                        <button id="resetBtn" class="btn btn-danger">🔄 重置</button>
+                        <button id="clearBtn" class="btn btn-warning">🗑️ 清空</button>
+                        <button id="randomBtn" class="btn btn-info">🎲 随机</button>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>⚙️ 设置</h3>
+                    <div class="setting-item">
+                        <label for="speedSlider">速度: <span id="speedValue">5</span></label>
+                        <input type="range" id="speedSlider" min="1" max="10" value="5">
+                    </div>
+                    <div class="setting-item">
+                        <label for="sizeSlider">网格大小: <span id="sizeValue">20</span></label>
+                        <input type="range" id="sizeSlider" min="10" max="50" value="20">
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>📊 统计信息</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">代数:</span>
+                            <span id="generation" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">活细胞:</span>
+                            <span id="population" class="stat-value">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>📖 游戏规则</h3>
+                    <div class="rules">
+                        <ul>
+                            <li><strong>生存:</strong> 活细胞周围有2-3个活细胞时存活</li>
+                            <li><strong>死亡:</strong> 活细胞周围少于2个或多于3个活细胞时死亡</li>
+                            <li><strong>繁殖:</strong> 死细胞周围恰好有3个活细胞时复活</li>
+                        </ul>
+                        <p class="tip">💡 点击网格可以手动添加/移除细胞</p>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>🎨 预设模式</h3>
+                    <div class="button-group">
+                        <button class="btn btn-pattern" data-pattern="glider">滑翔机</button>
+                        <button class="btn btn-pattern" data-pattern="blinker">闪烁灯</button>
+                        <button class="btn btn-pattern" data-pattern="toad">蟾蜍</button>
+                        <button class="btn btn-pattern" data-pattern="beacon">信标</button>
+                        <button class="btn btn-pattern" data-pattern="pulsar">脉冲星</button>
+                        <button class="btn btn-pattern" data-pattern="gliderGun">滑翔机枪</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
