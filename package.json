@@ -1,0 +1,27 @@
+{
+  "name": "conway-game-of-life",
+  "version": "1.0.0",
+  "description": "康威生命游戏 - 现代化、交互式的 Conway's Game of Life 实现",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx --yes serve . -l 3000",
+    "dev": "npx --yes serve . -l 3000"
+  },
+  "keywords": [
+    "game-of-life",
+    "conway",
+    "cellular-automaton",
+    "canvas",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/conway-game-of-life.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/conway-game-of-life/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/conway-game-of-life#readme"
+}
